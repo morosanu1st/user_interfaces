@@ -1,0 +1,109 @@
+body {
+    background: url(img/background.png);
+    background-size: cover;
+}
+
+.header {
+    width: 80vw;
+    height: 20vh;
+    margin: 0 auto;
+}
+
+.header .title {
+    width: auto;
+    height: auto;
+    left: 10vw;
+    top: 10vw;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 3em;
+    color: rgb(158, 13, 172);
+    cursor: pointer;
+}
+
+.search-box {
+    margin: 30px 150px;
+    left: 10%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search-box input {
+    font-size: 2em;
+    border-radius: 5px;
+}
+
+.search-icon {
+    content: "";
+    display: inline-block;
+    background-image: url("img/f9bb81e576c1a361c61a8c08945b2c48-search-icon-by-vexels.png");
+    background-size: contain;
+    width: 43px;
+    height: 43px;
+    margin-left: 10px;
+    float: left;
+    cursor: pointer;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 3px;
+    margin: 10px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    cursor: pointer;
+}
+
+.user-box {
+    float: right;
+}
+
+.button1 {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgb(158, 13, 172);
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    left: 10vw;
+    top: 20vh;
+}
+
+.content {
+    border: 2px solid rgb(84, 33, 97);
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 80vw;
+    height: 70vh;
+    flex-direction: column;
+}
+
+.breadcrumbs {
+    height: auto;
+    display: block;
+}
+
+.breadcrumb {
+    border: 2px solid rgb(84, 33, 97);
+    display: inline-block;
+    padding: 2px 0;
+    border-radius: 3px;
+    border-bottom: none;
+    margin-bottom: none;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 1px 5px;
+    color: rgb(84, 33, 97);
+    cursor: pointer;
+}
+
+.tab-selected {
+    background: rgba(255, 255, 255, 0.8);
+}
