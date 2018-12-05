@@ -51,6 +51,19 @@ body {
     border: 2px solid rgb(255, 255, 255);
 }
 
+.button2 {
+    border: 2px solid black;
+    color: black;
+    background-color: rgb(255, 179, 0);
+    font-size: 13px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    padding: 3px 10px;
+}
+
+.button2:hover {
+    background-color: rgba(158, 13, 172, 0.4);
+}
+
 .modal {
     display: block;
     position: fixed;
@@ -91,7 +104,7 @@ body {
 }
 
 .search-box {
-    margin: 30px 8vw;
+    margin: 20px 8vw;
     left: 10%;
     width: 80%;
     display: flex;
@@ -187,4 +200,75 @@ body {
 #collaborative-list,
 #favourite-list {
     display: none;
+}
+
+.search-stats {
+    margin-top: -15px;
+    margin-left: 10%;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.results {
+    width: 84%;
+    margin-left: 8%;
+    height: 75%;
+    flex-direction: column;
+    overflow: auto;
+    bottom: 0;
+}
+
+.hotel-preview {
+    margin-bottom: 20px;
+    width: 98%;
+    height: 120px;
+    background-color: rgba(255, 255, 0, 0.6);
+    border: 1px solid black;
+    border-radius: 5px;
+    flex-direction: row;
+}
+
+.hotel-preview img {
+    width: 105px;
+    height: 105px;
+    margin: 8px;
+    display: inline-block;
+}
+
+.first-col {
+    display: inline-block;
+    height: 105px;
+    width: 20%;
+    margin-left: 15px;
+    vertical-align: top;
+    padding-top: 10px;
+}
+
+.first-col div {
+    margin-top: 5px;
+}
+
+.hotel-title {
+    font-size: 1.2em;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.hotel-rating {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.hotel-preview {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.last-col {
+    height: 105px;
+    width: 30%;
+    vertical-align: top;
+    padding-top: 10px;
+    float: right;
+}
+
+.price {
+    font-size: 2.1em;
 }

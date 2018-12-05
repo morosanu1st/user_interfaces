@@ -27,20 +27,23 @@
     </div>
 
     <div class="modal">
-        <div id="Hotels">
-            <div id="search">
-                <div class="breadcrumbs">
-                    <div class="breadcrumb tab-selected">Hotels</div>
-                    <div class="breadcrumb">Travel experiences</div>
-                    <div class="breadcrumb">Collaborative lists</div>
-                    <div class="breadcrumb">Favourite list</div>
+
+        <div class="breadcrumbs">
+            <div class="breadcrumb tab-selected">Hotels</div>
+            <div class="breadcrumb">Travel experiences</div>
+            <div class="breadcrumb">Collaborative lists</div>
+            <div class="breadcrumb">Favourite list</div>
+        </div>
+
+        <div class="content">
+            <div id="Hotels">
+
+                <div class="search-box">
+                    <input type="text" placeholder="Search">
+                    <div class="search-icon search-hotels-button"></div>
+                    </input>
                 </div>
-                <div class="content">
-                    <div class="search-box">
-                        <input type="text" placeholder="Search">
-                        <div class="search-icon"></div>
-                        </input>
-                    </div>
+                <div id="search-hotels">
                     <div class="criteria">
                         <div class="col">
                             <div class="field">
@@ -63,21 +66,45 @@
                             <div class="field"><input type="number" id="adults" value="1" class="counter"></div>
                         </div>
                     </div>
+
+                </div>
+                <div id="hotel-results">
+                    <label class="search-stats">20 results found for <label id="query"></label> </label>
+                    <div class="results">
+                        <div class="hotel-preview">
+                            <img class="search-tile" src="img/conrad.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Hotel conrad</div>
+                                <div class="hotel-rating">Rating: ★★★</div>
+                                <div class="hotel-opinions">User-reviews: 8.5</div>
+                            </div>
+                            <div class="last-col">
+                                <span class="price">158€ </span> per night
+                                <div class="button button2"> More information</div>
+                            </div>
+                        </div>
+                        <div class="hotel-preview">
+
+                        </div>
+                        <div class="hotel-preview">
+
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div id="hotel-results">
+
+
+            <div id="travel-experiences">
 
             </div>
-        </div>
-        <div id="travel-experiences">
 
-        </div>
-        <div id="collaborative-list">
+            <div id="collaborative-list">
+            </div>
 
+            <div id="favourite-list">
+            </div>
         </div>
-        <div id="favourite-list">
 
-        </div>
     </div>
     <div class="footer">
         <div class="footer-item"><label>About us</label></div>
