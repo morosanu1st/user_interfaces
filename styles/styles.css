@@ -181,3 +181,10 @@ body {
 .footer-item label {
     cursor: pointer;
 }
+
+#hotel-results,
+#travel-experiences,
+#collaborative-list,
+#favourite-list {
+    display: none;
+}
