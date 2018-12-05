@@ -158,3 +158,26 @@ body {
 .counter {
     width: 60px;
 }
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    display: inline-flex;
+    flex-direction: row;
+    background-color: rgb(158, 13, 172);
+}
+
+.footer-item {
+    text-align: center;
+    display: inline-block;
+    color: white;
+    width: 25%;
+    margin: 0 auto;
+}
+
+.footer-item label {
+    cursor: pointer;
+}
