@@ -1,0 +1,183 @@
+body {
+    background: url(../img/background.png);
+    background-size: cover;
+}
+
+.header {
+    width: 80vw;
+    height: 20vh;
+    margin: 0 auto;
+}
+
+.header .title {
+    width: auto;
+    height: auto;
+    left: 10vw;
+    top: 10vw;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 3em;
+    color: rgb(158, 13, 172);
+    cursor: pointer;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 3px;
+    margin: 10px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    cursor: pointer;
+}
+
+.user-box {
+    float: right;
+}
+
+.user-name {
+    color: rgb(158, 13, 172);
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgb(158, 13, 172);
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    left: 10vw;
+    top: 20vh;
+}
+
+.breadcrumbs {
+    height: auto;
+    display: block;
+    padding-left: 15px;
+}
+
+.breadcrumb {
+    border: 2px solid rgb(84, 33, 97);
+    display: inline-block;
+    padding: 2px 0;
+    border-radius: 3px;
+    border-bottom: none;
+    margin-bottom: none;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 1px 5px;
+    color: rgb(84, 33, 97);
+    cursor: pointer;
+}
+
+.tab-selected {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.content {
+    border: 2px solid rgb(84, 33, 97);
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 80vw;
+    height: 70vh;
+    flex-direction: column;
+}
+
+.search-box {
+    margin: 30px 8vw;
+    left: 10%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search-box input {
+    font-size: 2em;
+    border-radius: 5px;
+}
+
+.search-icon {
+    content: "";
+    display: inline-block;
+    background-image: url("../img/f9bb81e576c1a361c61a8c08945b2c48-search-icon-by-vexels.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 43px;
+    height: 43px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.criteria {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+}
+
+.criteria .col {
+    font-size: 1.5em;
+    color: rgb(158, 13, 172);
+    width: 30%;
+    flex-direction: column;
+    padding-left: 10vw;
+}
+
+.criteria .half-l {
+    width: 10%;
+}
+
+.criteria .half-r {
+    width: 10%;
+    padding-left: 2vw;
+}
+
+.criteria .half-r .field {
+    margin-top: 0.2em;
+}
+
+.field {
+    padding: 20px 0;
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.criteria .col input {
+    margin-left: 10px;
+    border-radius: 4px;
+    float: right;
+}
+
+.counter {
+    width: 60px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    display: inline-flex;
+    flex-direction: row;
+    background-color: rgb(158, 13, 172);
+}
+
+.footer-item {
+    text-align: center;
+    display: inline-block;
+    color: white;
+    width: 25%;
+    margin: 0 auto;
+}
+
+.footer-item label {
+    cursor: pointer;
+}

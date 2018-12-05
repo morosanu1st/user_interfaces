@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/tricks.css">
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/main.js"></script>
 </head>
@@ -12,8 +13,15 @@
     <div class="header">
 
         <div class="user-box">
-            <div class="button button1">Login </div>
-            <div class="button button1">Register</div>
+            <div class="dropdown">
+                <div class="user-name dropbtn">John Smith ⌄ </div>
+                <div class="dropdown-content">
+                    <a href="#">My profile</a>
+                    <a href="#">My favourites</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+
         </div>
         <div class="title">Travel-now</div>
     </div>
@@ -22,6 +30,8 @@
         <div class="breadcrumbs">
             <div class="breadcrumb tab-selected">Hotels</div>
             <div class="breadcrumb">Travel experiences</div>
+            <div class="breadcrumb">Collaborative lists</div>
+            <div class="breadcrumb">Favourite list</div>
         </div>
         <div class="content">
             <div class="search-box">
@@ -53,7 +63,12 @@
             </div>
         </div>
     </div>
-
+    <div class="footer">
+        <div class="footer-item"><label>About us</label></div>
+        <div class="footer-item"><label>Contact</label></div>
+        <div class="footer-item"><label>Legal</label></div>
+        <div class="footer-item"><label>FAQs</label></div>
+    </div>
 
 </body>
 
