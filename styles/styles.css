@@ -158,3 +158,37 @@ body {
 .counter {
     width: 60px;
 }
+.titleFunctions{
+	text-decoration: underline;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	margin-left: 30px;
+	font-size: 35 px;
+}
+
+.favouriteList{
+	display:none;
+}
+
+.boxFavourite{
+	border: 4px solid black;
+	background-color: #ff9933;
+	margin: 10px;
+	padding: 5px;
+	height: 140px;
+}
+p#FavouriteAtt{
+	margin-top: 5px;
+	font-size: 20px;
+	float:right;
+	margin-right: 70%;
+}
+
+img#hotelFavouriteList{
+	height: 120px;
+	width: 150px;
+	float: left;
+}
+button#deleteHotel{
+	float:right;
+
+}
