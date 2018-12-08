@@ -3,6 +3,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="styles/modal.css">
+
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/main.js"></script>
@@ -12,13 +14,17 @@
     <div class="header">
 
         <div class="user-box">
-            <div class="button button1">Login </div>
-            <div class="button button1">Register</div>
+            <a href="#open-modal">
+                <div class="button button1">Login / Register </div>
+            </a>
+
+
+
         </div>
         <div class="title">Travel-now</div>
     </div>
 
-    <div class="modal">
+    <div class="modal1">
         <div class="breadcrumbs">
             <div class="breadcrumb tab-selected">Hotels</div>
             <div class="breadcrumb">Travel experiences</div>
@@ -50,6 +56,42 @@
                     <div class="field"><input type="number" id="adults" value="0" class="counter"></div>
                     <div class="field"><input type="number" id="adults" value="1" class="counter"></div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div id="open-modal" class="modal-window">
+        <div>
+            <a href="#" title="Close" class="modal-close">Close</a>
+            <div class="user-form">
+                <form id="login">
+                    <h2>Welcome back</h2>
+                    <input type="text" class="login-text" placeholder="Username" required />
+                    <input type="password" class="login-text" placeholder="Password" required/>
+                    <a href="#">
+                        <div class="button button4">Cancel</div>
+                    </a>
+                    <button class="button button3" onclick="tryLogin()">Sign in</button>
+                    <br> <label>Forgot your password?</label><br>
+                    <input type="submit" style="display: none" id="login-submit">
+
+                </form>
+
+            </div>
+            <div class="user-form">
+                <form>
+                    <h2>New arround here?</h2>
+                    <input type="text" class="login-text register" placeholder="First Name" required/>
+                    <input type="text" class="login-text register" placeholder="Last name" required/>
+                    <input type="text" class="login-text register" placeholder="E-mail" oninvalid="this.setCustomValidity('Please enter a valid E-mail')" oninput="this.setCustomValidity('')" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" />
+                    <input type="text" class="login-text register" placeholder="Username" required/>
+                    <input type="password" class="login-text register" placeholder="Password" required/>
+                    <a href="#">
+                        <div class="button button4">Cancel</div>
+                    </a>
+                    <button class="button button3">Register</button>
+                    <br><input type="checkbox" required oninvalid="this.setCustomValidity('You have to accept the terms and conditions')" oninput="this.setCustomValidity('')"> <label> I accept the site's <a href="javascript:void(0)"> Terms and Conditions.</a></label><br>
+                    <input type="submit" style="display: none" id="register-submit">
+                </form>
             </div>
         </div>
     </div>

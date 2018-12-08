@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     $(".search-hotels-button").click(function(e) {
         $("#search-hotels").css("display", "none");
@@ -117,3 +118,4 @@ function showVersallesInfo(){
 	 $("#search-box").css("display", "none");
 	 $("#versallesHotelInformation").fadeIn("slow");
 }
+
