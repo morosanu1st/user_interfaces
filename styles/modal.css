@@ -1,0 +1,91 @@
+.modal-window {
+    position: fixed;
+    background-color: rgba(44, 44, 44, 0.6);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.modal-window:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-window>div {
+    width: 800px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 8px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background: transparent;
+    color: #333333;
+}
+
+.modal-window header {
+    font-weight: bold;
+}
+
+.modal-window h1 {
+    font-size: 150%;
+    margin: 0 0 15px;
+    color: #333333;
+}
+
+.modal-close {
+    color: #aaa;
+    line-height: 50px;
+    font-size: 80%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 70px;
+    text-decoration: none;
+}
+
+.modal-close:hover {
+    color: #000;
+}
+
+.user-form {
+    display: inline-block;
+    width: 45%;
+    margin: 2%;
+    height: 91%;
+    background-image: linear-gradient( rgb(141, 133, 250), rgb(199, 194, 243));
+    border-radius: 5px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.user-form h2 {
+    color: rgb(122, 0, 112);
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.user-form label {
+    color: 30, 30, 30;
+    cursor: pointer;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.login-text {
+    width: 80%;
+    height: auto;
+    font-size: 1.3em;
+    border-radius: 2px;
+    margin: 20px 10px;
+}
+
+.user-form .register {
+    margin-bottom: 0;
+}
