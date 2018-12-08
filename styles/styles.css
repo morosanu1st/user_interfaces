@@ -75,6 +75,7 @@ a {
     border-radius: 2px;
 }
 
+
 .button4 {
     background-color: rgb(167, 32, 32);
     color: rgb(61, 61, 61);
@@ -82,6 +83,7 @@ a {
 }
 
 .modal1 {
+
     display: block;
     position: fixed;
     left: 10vw;
@@ -213,11 +215,16 @@ a {
 }
 
 #hotel-results,
+#conradHotelInformation,
+#waldorfHotelInformation,
+#exeMoncloaHotelInformation,
+#versallesHotelInformation,
 #travel-experiences,
 #collaborative-list,
 #favourite-list {
     display: none;
 }
+
 
 .search-stats {
     margin-top: -15px;
@@ -225,6 +232,14 @@ a {
     margin-bottom: 5px;
     font-size: 1.1em;
 }
+
+
+.favourites{
+	overflow:auto;
+	bottom:0;
+	flex-direction: column;
+}
+
 
 .results {
     width: 84%;
@@ -255,7 +270,9 @@ a {
 .first-col {
     display: inline-block;
     height: 105px;
+
     width: 250px;
+
     margin-left: 15px;
     vertical-align: top;
     padding-top: 10px;
@@ -280,7 +297,9 @@ a {
 
 .last-col {
     height: 105px;
+
     width: 180px;
+
     vertical-align: top;
     padding-top: 10px;
     float: right;
@@ -290,9 +309,52 @@ a {
     font-size: 2.1em;
 }
 
+
 .login-modal {
     position: fixed;
     z-index: 100;
     width: 70vw;
     min-width: 400px;
 }
+
+.titleTasks{
+	text-decoration: underline;
+	font-size: 30px;
+	margin-left:  10px;
+}
+
+
+.deleteHotel{
+	float:right;
+	margin-right: 20px;
+}
+.hotelInfo{
+	margin-top: 50px;
+	width: 84%;
+    margin-left: 8%;
+    height: 75%;
+    flex-direction: column;
+    overflow: auto;
+    bottom: 0;
+	background-color:rgba(255, 255, 0, 0.6);
+	border: 1px solid black;
+    border-radius: 5px;
+}
+.hotelInfoPhoto {
+	width:200px;
+	height:200px;
+	margin: 25px;
+}
+
+.attHotel{
+	margin-left: 20px;
+	font-family: "Comic Sans MS", sans-serif;
+	font-color: solid black;
+}
+
+.attHotelDesc{
+	margin-left: 10px;
+	font-family: "Comic Sans MS", sans-serif;
+	font-color: solid black;
+}
+

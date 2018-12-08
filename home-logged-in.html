@@ -9,7 +9,7 @@
     <script src="js/main.js"></script>
 </head>
 
-<body>
+<body onload="startFav()">
     <div class="header">
 
         <div class="user-box">
@@ -26,22 +26,25 @@
         <div class="title">Travel-now</div>
     </div>
 
-    <div class="modal1">
+
+    <div class="modal">
 
         <div class="breadcrumbs">
-            <div class="breadcrumb tab-selected">Hotels</div>
-            <div class="breadcrumb">Travel experiences</div>
-            <div class="breadcrumb">Collaborative lists</div>
-            <div class="breadcrumb">Favourite list</div>
+            <div class="breadcrumb tab-selected" onclick="showHotelSearch()" >Hotels</div>
+            <div class="breadcrumb" onclick="showTravelExperiences()">Travel experiences</div>
+            <div class="breadcrumb" onclick="showCollaborativeList()">Collaborative lists</div>
+            <div class="breadcrumb" onclick="showFavouriteList()">Favourite list</div>
         </div>
 
         <div class="content">
             <div id="Hotels">
 
+
                 <div class="search-box">
                     <input type="text" placeholder="Search" />
                     <div class="search-icon search-hotels-button"></div>
                     <div id="new-search" class="user-box user-name" style="margin-left:20%; color: red; display: none">New search</div>
+
                 </div>
                 <div id="search-hotels">
                     <div class="criteria">
@@ -109,6 +112,60 @@
                         </div>
                     </div>
                 </div>
+                <div id="hotel-results">
+                    <label class="search-stats">20 results found for <label id="query"></label> </label>
+                    <div class="results">
+                        <div class="hotel-preview">
+                            <img class="search-tile" src="img/conrad/conrad.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Hotel conrad</div>
+                                <div class="hotel-rating">Rating: ★★★★★</div>
+                                <div class="hotel-opinions">User-reviews: 8.5</div>
+                            </div>
+                            <div class="last-col">
+                                <span class="price">158€ </span> per night
+                                <div class="button button2" onclick="showConradInfo()"> More information</div>
+                            </div>
+                        </div>
+                       <div class="hotel-preview">
+							<img class="search-tile" src="img/waldorf/waldorf.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Waldorf Astoria Hotel</div>
+                                <div class="hotel-rating">Rating: ★★★★★</div>
+                                <div class="hotel-opinions" >User-reviews: 9.5</div>
+                            </div>
+                            <div class="last-col">
+                                <span class="price">215€ </span> per night
+                                <div class="button button2" onclick="showWaldorfInfo()"> More information</div>
+                            </div>
+                        </div>
+                        <div class="hotel-preview">
+							<img class="search-tile" src="img/exeMoncloa/exe-moncloa.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Hotel Exe Moncloa</div>
+                                <div class="hotel-rating">Rating: ★★★★</div>
+                                <div class="hotel-opinions">User-reviews: 8.2</div>
+                            </div>
+                            <div class="last-col">
+                                <span class="price">149€ </span> per night
+                                <div class="button button2" onclick="showExeMoncloaInfo()" > More information</div>
+							</div>
+						</div>
+						<div class="hotel-preview">
+							<img class="search-tile" src="img/versalles/versalles.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Hotel Versalles</div>
+                                <div class="hotel-rating">Rating: ★★★★</div>
+                                <div class="hotel-opinions">User-reviews: 8.4</div>
+                            </div>
+                            <div class="last-col">
+                                <span class="price">89€ </span> per night
+                                <div class="button button2" onclick="showVersallesInfo()" > More information</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
 
 
@@ -120,8 +177,117 @@
             </div>
 
             <div id="favourite-list">
-            </div>
-        </div>
+
+				<p class="titleTasks"> Favourite list</p>
+				<div class="results">
+                        <div class="hotel-preview" id="conradFavourite">
+                            <img class="search-tile" src="img/conrad/conrad.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Hotel conrad</div>
+                                <div class="hotel-rating">Rating: ★★★★★</div>
+                                <div class="hotel-opinions">New York, United States</div>
+                            </div>
+                            <div class="last-col">
+                                <button type="button" class="deleteHotel" onclick="deleteConradFavourite()">Delete</button>
+                            </div>
+                        </div>
+						<div class="hotel-preview" id="waldorfFavourite">>
+							<img class="search-tile" src="img/waldorf/waldorf.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Waldorf Astoria Hotel</div>
+                                <div class="hotel-rating">Rating: ★★★★★</div>
+                                <div class="hotel-opinions">Amsterdam, Netherlands</div>
+                            </div>
+                            <div class="last-col">
+                                <button type="button" class="deleteHotel" onclick="deleteWaldorfFavourite()">Delete</button>
+                            </div>
+						</div>
+						<div class="hotel-preview" id="exeMoncloaFavourite">
+                            <img class="search-tile" src="img/exeMoncloa/exe-moncloa.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Hotel Exe Moncloa</div>
+                                <div class="hotel-rating">Rating: ★★★★</div>
+                                <div class="hotel-opinions">Madrid, Spain</div>
+                            </div>
+                            <div class="last-col">
+                                <button type="button" class="deleteHotel" onclick="deleteEXeMoncloaFavourite()">Delete</button>
+                            </div>
+                        </div>
+						<div class="hotel-preview" id="versallesFavourite">>
+							<img class="search-tile" src="img/versalles/versalles.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Hotel Versalles</div>
+                                <div class="hotel-rating">Madrid, Spain</div>
+                            </div>
+                            <div class="last-col">
+                                <button type="button" class="deleteHotel" onclick="deleteVersallesFavourite()">Delete</button>
+                            </div>
+						</div>
+				</div>
+			</div>
+
+			<div id="conradHotelInformation">
+				<div class="hotelInfo">
+					<p class="titleTasks"> Conrad Hotel</p>
+					<img class="hotelInfoPhoto" src="img/conrad/conrad.jpg"><img class="hotelInfoPhoto" src="img/conrad/pool.jpg">
+					<img class="hotelInfoPhoto" src="img/conrad/section2.jpg"><img class="hotelInfoPhoto" src="img/conrad/lobby.jpeg">
+					<br><br> <p class="attHotel">Location: <h class="attHotelDesc"> New York, United States </h></p> 
+					<br> <p class="attHotel">Description: <h class="attHotelDesc"> Conrad Hotels & Resorts is access to life as you want to live it. A place to experience service and style on your own terms. A place to connect with the world. A place to stay inspired. We offer our
+																						guests one-of-a-kind experiences with sophisticated, locally inspired surroundings. Service that's more than personal, it's
+																					intuitive. And connections to people and places around the corner, and half way around the world. </h></p>
+					<br>  <p class="attHotel">Rating: <h class="attHotelDesc">	★★★★★	</h></p>	
+					<br>  <p class="attHotel">Price: <h class="attHotelDesc">	159€ per night</h></p>
+					<br>  <p class="attHotel">User's review: <h class="attHotelDesc">	8.5</h></p>
+
+				</div>
+			</div>
+
+			<div id="waldorfHotelInformation">
+				<div class="hotelInfo">
+					<p class="titleTasks"> Waldorf Astoria Hotel</p>
+					<img class="hotelInfoPhoto" src="img/waldorf/waldorf.jpg"><img class="hotelInfoPhoto" src="img/waldorf/lobby.jpg">
+					<img class="hotelInfoPhoto" src="img/waldorf/room.jpg"><img class="hotelInfoPhoto" src="img/waldorf/lobby2.jpg">
+					<br><br> <p class="attHotel">Location: <h class="attHotelDesc"> Amsterdam, Netherlands </h></p> 
+					<br> <p class="attHotel">Description: <h class="attHotelDesc"> An exceptional retreat in the heart of a storied and remarkable destination. Waldorf Astoria Amsterdam is a collection of six 17th century canal palaces on the Herengracht in Amsterdam.
+																					Discover Dutch heritage at its finest. Waldorf Astoria Amsterdam combines legendary service and timeless elegance for an unforgettable experience. A short walk from luxury shops, museums and theaters, 
+																					this architectural masterpiece boasts breathtaking views of the canal or the courtyard garden from its guest rooms, suites and lofts.
+																					Delight your senses with world-class dining at the two-star Michelin restaurant, Librije's Zusje Amsterdam.  </h></p>
+					<br>  <p class="attHotel">Rating: <h class="attHotelDesc">	★★★★★	</h></p>	
+					<br>  <p class="attHotel">Price: <h class="attHotelDesc">	215€ per night</h></p>
+					<br>  <p class="attHotel">User's review: <h class="attHotelDesc">	9.5</h></p>
+				</div>
+			</div>
+
+			<div id="exeMoncloaHotelInformation">
+				<div class="hotelInfo">
+					<p class="titleTasks">Hotel Exe Moncloa</p>
+					<img class="hotelInfoPhoto" src="img/exeMoncloa/exe-moncloa.jpg"><img class="hotelInfoPhoto" src="img/exeMoncloa/pool.jpg">
+					<img class="hotelInfoPhoto" src="img/exeMoncloa/bar.jpg"><img class="hotelInfoPhoto" src="img/exeMoncloa/room.jpg">
+					<br><br> <p class="attHotel">Location: <h class="attHotelDesc">Madrid, Spain </h></p> 
+					<br> <p class="attHotel">Description: <h class="attHotelDesc"> The Exe Moncloa stands on the neighborhood of Chamberí to invite you to enjoy an unbeatable location in the center of Madrid. Exe Moncloa presents an elegant decoration that combines perfectly with the avant-garde and minimalist lines of its design. 
+																					Its facilities integrate a series of services that seek to provide a differentiating touch to the stays of our guests. Crowning the top floor of Exe Moncloa is one of the most privileged corners of Madrid. 
+																					The terrace of Poniente, a space that is framed by the views of the Sierra de Guadarrama and the llanura Castellana. </h></p>
+					<br>  <p class="attHotel">Rating: <h class="attHotelDesc">	★★★★	</h></p>	
+					<br>  <p class="attHotel">Price: <h class="attHotelDesc">	149€ per night</h></p>
+					<br>  <p class="attHotel">User's review: <h class="attHotelDesc">	8.2</h></p>
+				</div>
+			</div>
+
+			<div id="versallesHotelInformation">
+				<div class="hotelInfo">
+					<p class="titleTasks"> Hotel Versalles</p>
+					<img class="hotelInfoPhoto" src="img/versalles/versalles.jpg"><img class="hotelInfoPhoto" src="img/versalles/lounge.jpg">
+					<img class="hotelInfoPhoto" src="img/versalles/habitacion.jpg"><img class="hotelInfoPhoto" src="img/versalles/lobby.jpg">
+					<br><br> <p class="attHotel">Location: <h class="attHotelDesc"> Madrid, Spain </h></p> 
+					<br> <p class="attHotel">Description: <h class="attHotelDesc"> This elegant hotel is a 3-minute walk from the Alonso Martínez metro station. The simple rooms are decorated in neutral colors and feature soundproof windows, free Wi-Fi, flat-screen TVs, minibars and desks. Room service available.
+																				The hotel has a colorful cafe / bar that serves coffees and tapas, as well as a business center. Parking and a continental or buffet breakfast are available for a fee. </h></p>
+					<br>  <p class="attHotel">Rating: <h class="attHotelDesc">	★★★★	</h></p>	
+					<br>  <p class="attHotel">Price: <h class="attHotelDesc">	89€ per night</h></p>
+					<br>  <p class="attHotel">User's review: <h class="attHotelDesc">	8.4</h></p>
+				</div>
+			</div>
+
+		</div>
 
     </div>
     <div class="footer">
