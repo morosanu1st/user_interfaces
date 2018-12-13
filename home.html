@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -17,55 +18,185 @@
             <a href="#open-modal">
                 <div class="button button1">Login / Register </div>
             </a>
-
-
-
         </div>
         <div class="title">Travel-now</div>
     </div>
 
     <div class="modal1">
         <div class="breadcrumbs">
-            <div class="breadcrumb tab-selected">Hotels</div>
-            <div class="breadcrumb">Travel experiences</div>
+            <div id="bc-h" class="breadcrumb tab-selected" onclick="showHotelSearch()">Hotels</div>
+            <div id="bc-t" class="breadcrumb" onclick="showTravelExperiences()">Travel experiences</div>
         </div>
         <div class="content">
-            <div class="search-box">
-                <input type="text" placeholder="Search">
-                <div class="search-icon"></div>
-                </input>
+            <div id="Hotels">
+
+                <div class="search-box">
+                    <input type="text" placeholder="Search" />
+                    <div class="search-icon search-hotels-button"></div>
+                    <div id="new-search" class="user-box user-name" style="margin-left:20%; color: red; display: none">New search</div>
+                </div>
+                <div id="search-hotels">
+                    <div class="criteria">
+                        <div class="col">
+                            <div class="field">
+                                <label>Departure:</label>
+                                <input type="date" value="2018-01-01" id="departure">
+                            </div>
+                            <div class="field">
+                                <label>Arrival:&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                                <input type="date" value="2018-01-01" id="arrival">
+                            </div>
+                        </div>
+                        <div class="col half-l">
+                            <div class="field"><label>Adults:</label></div>
+                            <div class="field"><label>Children:</label></div>
+                            <div class="field"><label>Rooms:</label></div>
+                        </div>
+                        <div class="col half-r">
+                            <div class="field"><input type="number" id="adults" value="1" class="counter"></div>
+                            <div class="field"><input type="number" id="adults" value="0" class="counter"></div>
+                            <div class="field"><input type="number" id="adults" value="1" class="counter"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="hotel-results" class="height-fix">
+                    <label class="search-stats">20 results found for <label id="query"></label> </label>
+                    <div class="results">
+                        <div class="hotel-preview">
+                            <img class="search-tile" src="img/conrad.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Hotel conrad</div>
+                                <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;</div>
+                                <div class="hotel-opinions">User-reviews: 8.5</div>
+                            </div>
+                            <div class="last-col">
+                                <span class="price">158&#8364; </span> per night
+                                <div class="button button2"> More information</div>
+                            </div>
+                        </div>
+                        <div class="hotel-preview">
+                            <img class="search-tile" src="img/waldorf.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Hotel Waldorf Atocha</div>
+                                <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <div class="hotel-opinions">User-reviews: 8.3</div>
+                            </div>
+                            <div class="last-col">
+                                <span class="price">192&#8364; </span> per night
+                                <div class="button button2"> More information</div>
+                            </div>
+                        </div>
+                        <div class="hotel-preview">
+                            <img class="search-tile" src="img/sol.jpeg">
+                            <div class="first-col">
+                                <div class="hotel-title">Hotel Puerta del Sol</div>
+                                <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;</div>
+                                <div class="hotel-opinions">User-reviews: 7.5</div>
+                            </div>
+                            <div class="last-col">
+                                <span class="price">155&#8364; </span> per night
+                                <div class="button button2"> More information</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="criteria">
-                <div class="col">
-                    <div class="field">
-                        <label>Departure:</label>
-                        <input type="date" value="2018-01-01" id="departure">
-                    </div>
-                    <div class="field">
-                        <label>Arrival:&nbsp;&nbsp;&nbsp;&nbsp; </label>
-                        <input type="date" value="2018-01-01" id="arrival">
+
+
+            <div id="travel-experiences">
+                <div class="search-box" id="search-box">
+                    <input type="text" placeholder="Search">
+                    <div class="search-icon search-travels-button"></div>
+                    </input>
+                </div>
+                <div id="search-travels">
+                    <div class="criteria">
+                        <div class="col">
+                            <div class="field">
+                                <label>Departure:</label>
+                                <input type="date" value="2018-01-01" id="departure">
+                            </div>
+                            <div class="field">
+                                <label>Arrival:&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                                <input type="date" value="2018-01-01" id="arrival">
+                            </div>
+                        </div>
+                        <div class="col half-l">
+                            <div class="field"><label>Adults:</label></div>
+                            <div class="field"><label>Children:</label></div>
+                        </div>
+                        <div class="col half-r">
+                            <div class="field"><input type="number" id="adults" value="1" class="counter"></div>
+                            <div class="field"><input type="number" id="adults" value="0" class="counter"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="col half-l">
-                    <div class="field"><label>Adults:</label></div>
-                    <div class="field"><label>Children:</label></div>
-                    <div class="field"><label>Rooms:</label></div>
-                </div>
-                <div class="col half-r">
-                    <div class="field"><input type="number" id="adults" value="1" class="counter"></div>
-                    <div class="field"><input type="number" id="adults" value="0" class="counter"></div>
-                    <div class="field"><input type="number" id="adults" value="1" class="counter"></div>
+                <div id="travel-results" class="height-fix">
+                    <label class="search-stats">20 results found for <label id="query"></label> </label>
+                    <div class="results">
+                        <div class="travel-preview">
+                            <img class="search-tile" src="img/manta1.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Night dive with manta rays in Hawaii</div>
+                                <!-- We have called it 'hotel-title' instead of 'travel-title' as the style is the same -->
+                                <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <!-- Same for 'hotel-rating' and 'hotel-opinions' -->
+                                <div class="hotel-opinions">User-reviews: 9.5</div>
+                            </div>
+                            <div class="last-col">
+                                <span class="price">40&#8364; </span> per person
+                                <div class="button button2" onclick="showNightDiveInfo()"> More information</div>
+                            </div>
+                        </div>
+                        <div class="travel-preview">
+                            <img class="search-tile" src="img/rome1.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Ancient Rome experience</div>
+                                <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;</div>
+                                <div class="hotel-opinions">User-reviews: 7.2</div>
+                            </div>
+                            <div class="last-col">
+                                <span class="price">65&#8364; </span> per person
+                                <div class="button button2" onclick="showRomeInfo()"> More information</div>
+                            </div>
+                        </div>
+                        <div class="travel-preview">
+                            <img class="search-tile" src="img/camden1.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Sightseeing day sail in Camden</div>
+                                <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <div class="hotel-opinions">User-reviews: 9.8</div>
+                            </div>
+                            <div class="last-col">
+                                <span class="price">30&#8364; </span> per person
+                                <div class="button button2" onclick="showSailDayInfo()"> More information</div>
+                            </div>
+                        </div>
+                        <div class="travel-preview">
+                            <img class="search-tile" src="img/mexico1.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Half day canyon jump in Mexico</div>
+                                <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;</div>
+                                <div class="hotel-opinions">User-reviews: 6.3</div>
+                            </div>
+                            <div class="last-col">
+                                <span class="price">70&#8364; </span> per person
+                                <div class="button button2" onclick="showMexicoInfo()"> More information</div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div id="open-modal" class="modal-window">
         <div>
-            <a href="#" title="Close" class="modal-close">Close</a>
             <div class="user-form">
                 <form id="login">
                     <h2>Welcome back</h2>
-                    <input type="text" class="login-text" placeholder="Username" required />
+                    <input type="text" class="login-text" id="un-login" placeholder="Username" required />
                     <input type="password" class="login-text" placeholder="Password" required/>
                     <a href="#">
                         <div class="button button4">Cancel</div>
@@ -78,17 +209,17 @@
 
             </div>
             <div class="user-form">
-                <form>
+                <form id="register">
                     <h2>New arround here?</h2>
-                    <input type="text" class="login-text register" placeholder="First Name" required/>
-                    <input type="text" class="login-text register" placeholder="Last name" required/>
+                    <input type="text" id="fn-reg" class="login-text register" placeholder="First Name" required/>
+                    <input type="text" id="ln-reg" class="login-text register" placeholder="Last name" required/>
                     <input type="text" class="login-text register" placeholder="E-mail" oninvalid="this.setCustomValidity('Please enter a valid E-mail')" oninput="this.setCustomValidity('')" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" />
                     <input type="text" class="login-text register" placeholder="Username" required/>
                     <input type="password" class="login-text register" placeholder="Password" required/>
                     <a href="#">
                         <div class="button button4">Cancel</div>
                     </a>
-                    <button class="button button3">Register</button>
+                    <button class="button button3" onclick="tryRegister()">Register</button>
                     <br><input type="checkbox" required oninvalid="this.setCustomValidity('You have to accept the terms and conditions')" oninput="this.setCustomValidity('')"> <label> I accept the site's <a href="javascript:void(0)"> Terms and Conditions.</a></label><br>
                     <input type="submit" style="display: none" id="register-submit">
                 </form>
@@ -96,6 +227,12 @@
         </div>
     </div>
 
+    <div class="footer">
+        <div class="footer-item"><label>About us</label></div>
+        <div class="footer-item"><label>Contact</label></div>
+        <div class="footer-item"><label>Legal</label></div>
+        <div class="footer-item"><label>FAQs</label></div>
+    </div>
 
 </body>
 

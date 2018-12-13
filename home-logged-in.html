@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -14,10 +15,10 @@
 
         <div class="user-box">
             <div class="dropdown">
-                <div class="user-name dropbtn">John Smith ⌄ </div>
+                <div id="username" class="user-name dropbtn">John Smith </div>
                 <div class="dropdown-content">
                     <a href="#">My profile</a>
-                    <a href="#">My favourites</a>
+                    <a href="#" onclick="showFavouriteList()">My favourites</a>
                     <a href="home.html">Logout</a>
                 </div>
             </div>
@@ -29,10 +30,10 @@
     <div class="modal1">
 
         <div class="breadcrumbs">
-            <div class="breadcrumb tab-selected">Hotels</div>
-            <div class="breadcrumb">Travel experiences</div>
-            <div class="breadcrumb">Collaborative lists</div>
-            <div class="breadcrumb">Favourite list</div>
+            <div id="bc-h" class="breadcrumb tab-selected" onclick="showHotelSearch()">Hotels</div>
+            <div id="bc-t" class="breadcrumb" onclick="showTravelExperiences()">Travel experiences</div>
+            <div id="bc-c" class="breadcrumb" onclick="showCollaborativeList()">Collaborative lists</div>
+            <div id="bc-f" class="breadcrumb" onclick="showFavouriteList()">Favourite list</div>
         </div>
 
         <div class="content">
@@ -68,43 +69,43 @@
                     </div>
 
                 </div>
-                <div id="hotel-results">
+                <div id="hotel-results" class="height-fix">
                     <label class="search-stats">20 results found for <label id="query"></label> </label>
                     <div class="results">
                         <div class="hotel-preview">
                             <img class="search-tile" src="img/conrad.jpg">
                             <div class="first-col">
                                 <div class="hotel-title">Hotel conrad</div>
-                                <div class="hotel-rating">Rating: ★★★</div>
+                                <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;</div>
                                 <div class="hotel-opinions">User-reviews: 8.5</div>
                             </div>
                             <div class="last-col">
-                                <span class="price">158€ </span> per night
-                                <div class="button button2"> More information</div>
+                                <span class="price">158&#8364; </span> per night
+                                <div class="button button2" onclick="showConradInfo()"> More information</div>
                             </div>
                         </div>
                         <div class="hotel-preview">
                             <img class="search-tile" src="img/waldorf.jpg">
                             <div class="first-col">
                                 <div class="hotel-title">Hotel Waldorf Atocha</div>
-                                <div class="hotel-rating">Rating: ★★★★★</div>
+                                <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
                                 <div class="hotel-opinions">User-reviews: 8.3</div>
                             </div>
                             <div class="last-col">
-                                <span class="price">192€ </span> per night
-                                <div class="button button2"> More information</div>
+                                <span class="price">192&#8364; </span> per night
+                                <div class="button button2" onclick="showWaldorfInfo()"> More information</div>
                             </div>
                         </div>
                         <div class="hotel-preview">
                             <img class="search-tile" src="img/sol.jpeg">
                             <div class="first-col">
                                 <div class="hotel-title">Hotel Puerta del Sol</div>
-                                <div class="hotel-rating">Rating: ★★★★</div>
+                                <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;</div>
                                 <div class="hotel-opinions">User-reviews: 7.5</div>
                             </div>
                             <div class="last-col">
-                                <span class="price">155€ </span> per night
-                                <div class="button button2"> More information</div>
+                                <span class="price">155&#8364; </span> per night
+                                <div class="button button2" onclick="showExeMoncloaInfo()"> More information</div>
                             </div>
                         </div>
                     </div>
@@ -113,21 +114,992 @@
 
 
             <div id="travel-experiences">
+                <div class="search-box show-search-box" id="search-box">
+                    <input type="text" placeholder="Search">
+                    <div class="search-icon search-travels-button"></div>
+                    </input>
+                </div>
+                <div id="search-travels">
+                    <div class="criteria">
+                        <div class="col">
+                            <div class="field">
+                                <label>Departure:</label>
+                                <input type="date" value="2018-01-01" id="departure">
+                            </div>
+                            <div class="field">
+                                <label>Arrival:&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                                <input type="date" value="2018-01-01" id="arrival">
+                            </div>
+                        </div>
+                        <div class="col half-l">
+                            <div class="field"><label>Adults:</label></div>
+                            <div class="field"><label>Children:</label></div>
+                        </div>
+                        <div class="col half-r">
+                            <div class="field"><input type="number" id="adults" value="1" class="counter"></div>
+                            <div class="field"><input type="number" id="adults" value="0" class="counter"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="travel-results" class="height-fix">
+                    <label class="search-stats">20 results found for <label id="query"></label> </label>
+                    <div class="results">
+                        <div class="travel-preview">
+                            <img class="search-tile" src="img/manta1.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Night dive with manta rays in Hawaii</div>
+                                <!-- We have called it 'hotel-title' instead of 'travel-title' as the style is the same -->
+                                <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <!-- Same for 'hotel-rating' and 'hotel-opinions' -->
+                                <div class="hotel-opinions">User-reviews: 9.5</div>
+                            </div>
+                            <div class="last-col">
+                                <span class="price">40&#8364; </span> per person
+                                <div class="button button2" onclick="showNightDiveInfo()"> More information</div>
+                            </div>
+                        </div>
+                        <div class="travel-preview">
+                            <img class="search-tile" src="img/rome1.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Ancient Rome experience</div>
+                                <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;</div>
+                                <div class="hotel-opinions">User-reviews: 7.2</div>
+                            </div>
+                            <div class="last-col">
+                                <span class="price">65&#8364; </span> per person
+                                <div class="button button2" onclick="showRomeInfo()"> More information</div>
+                            </div>
+                        </div>
+                        <div class="travel-preview">
+                            <img class="search-tile" src="img/camden1.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Sightseeing day sail in Camden</div>
+                                <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <div class="hotel-opinions">User-reviews: 9.8</div>
+                            </div>
+                            <div class="last-col">
+                                <span class="price">30&#8364; </span> per person
+                                <div class="button button2" onclick="showSailDayInfo()"> More information</div>
+                            </div>
+                        </div>
+                        <div class="travel-preview">
+                            <img class="search-tile" src="img/mexico1.jpg">
+                            <div class="first-col">
+                                <div class="hotel-title">Half day canyon jump in Mexico</div>
+                                <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;</div>
+                                <div class="hotel-opinions">User-reviews: 6.3</div>
+                            </div>
+                            <div class="last-col">
+                                <span class="price">70&#8364; </span> per person
+                                <div class="button button2" onclick="showMexicoInfo()"> More information</div>
+                            </div>
+                        </div>
 
+                    </div>
+                </div>
             </div>
 
             <div id="collaborative-list">
+                <!--COLLABORATIVE LISTS -->
+                <div class="user-list" id="user-list1">
+                    <p>Users of List 1: </p>
+                    <p>John</p>
+                    <p>Alice</p>
+                    <button type="button" class="hideUsers" onclick="hideUsers()">X</button>
+                </div>
+                <div class="user-list" id="user-list2">
+                    <p>Users of List 2: </p>
+                    <p>Peter</p>
+                    <p>Alice</p>
+                    <button type="button" class="hideUsers" onclick="hideUsers()">X</button>
+                </div>
+                <div class="user-list" id="user-list3">
+                    <p>Users of List 3: </p>
+                    <p>John</p>
+                    <p>Peter</p>
+                    <button type="button" class="hideUsers" onclick="hideUsers()">X</button>
+                </div>
+                <img class="users" onclick="showUsers()" src="img/users.png">
+                <!-- The users of the list will be displayed when the mouse is onto 
+																												the image, and hide when the mouse is not onto the image-->
+                <select id="lists" onchange="myLists()">    <!-- This function executed 'onchange' checks what list is selected and displays it -->
+					<option value="List 1">List 1</option>
+					<option value="List 2">List 2</option>
+					<option value="List 3">List 3</option>
+				</select>
+                <div id="list1" class="list">
+                    <!-- List 1 -->
+                    <div class="hotel-preview" id="conradList1">
+                        <img class="search-tile" src="img/conrad.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Hotel conrad</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 8.5</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">158&#8364; </span> per night
+                            <div class="button button2" onclick="showConradInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteConradList1()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="hotel-preview" id="waldorfList1">
+                        <img class="search-tile" src="img/waldorf.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Waldorf Astoria Hotel</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 9.5</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">215&#8364; </span> per night
+                            <div class="button button2" onclick="showWaldorfInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteWaldorfList1()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="hotel-preview" id="exeMoncloaList1">
+                        <img class="search-tile" src="img/exe-moncloa.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Hotel Exe Moncloa</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 8.2</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">149&#8364; </span> per night
+                            <div class="button button2" onclick="showExeMoncloaInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteExeMoncloaList1()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="hotel-preview" id="versallesList1">
+                        <img class="search-tile" src="img/versalles.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Hotel Versalles</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 8.4</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">89&#8364; </span> per night
+                            <div class="button button2" onclick="showVersallesInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteVersallesList1()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="travel-preview" id="mantaList1">
+                        <img class="search-tile" src="img/manta1.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Night dive with manta rays in Hawaii</div>
+                            <!-- We have called it 'hotel-title' instead of 'travel-title' as the style is the same -->
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <!-- Same for 'hotel-rating' and 'hotel-opinions' -->
+                            <div class="hotel-opinions">User-reviews: 9.5</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">40&#8364; </span> per person
+                            <div class="button button2" onclick="showNightDiveInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteMantaList1()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="travel-preview" id="romeList1">
+                        <img class="search-tile" src="img/rome1.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Ancient Rome experience</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 7.2</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">65&#8364; </span> per person
+                            <div class="button button2" onclick="showRomeInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteRomeList1()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="travel-preview" id="camdenList1">
+                        <img class="search-tile" src="img/camden1.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Sightseeing day sail in Camden</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 9.8</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">30&#8364; </span> per person
+                            <div class="button button2" onclick="showSailDayInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteCamdenList1()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="travel-preview" id="mexicoList1">
+                        <img class="search-tile" src="img/mexico1.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Half day canyon jump in Mexico</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 6.3</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">70&#8364; </span> per person
+                            <div class="button button2" onclick="showMexicoInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteMexicoList1()">Delete</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="list2" class="list">
+                    <!-- List 2 -->
+                    <div class="hotel-preview" id="conradList2">
+                        <img class="search-tile" src="img/conrad.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Hotel conrad</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 8.5</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">158&#8364; </span> per night
+                            <div class="button button2" onclick="showConradInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteConradList2()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="hotel-preview" id="waldorfList2">
+                        <img class="search-tile" src="img/waldorf.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Waldorf Astoria Hotel</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 9.5</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">215&#8364; </span> per night
+                            <div class="button button2" onclick="showWaldorfInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteWaldorfList2()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="hotel-preview" id="exeMoncloaList2">
+                        <img class="search-tile" src="img/exe-moncloa.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Hotel Exe Moncloa</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 8.2</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">149&#8364; </span> per night
+                            <div class="button button2" onclick="showExeMoncloaInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteExeMoncloaList2()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="hotel-preview" id="versallesList2">
+                        <img class="search-tile" src="img/versalles.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Hotel Versalles</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 8.4</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">89&#8364; </span> per night
+                            <div class="button button2" onclick="showVersallesInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteVersallesList2()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="travel-preview" id="mantaList2">
+                        <img class="search-tile" src="img/manta1.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Night dive with manta rays in Hawaii</div>
+                            <!-- We have called it 'hotel-title' instead of 'travel-title' as the style is the same -->
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <!-- Same for 'hotel-rating' and 'hotel-opinions' -->
+                            <div class="hotel-opinions">User-reviews: 9.5</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">40&#8364; </span> per person
+                            <div class="button button2" onclick="showNightDiveInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteMantaList2()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="travel-preview" id="romeList2">
+                        <img class="search-tile" src="img/rome1.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Ancient Rome experience</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 7.2</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">65&#8364; </span> per person
+                            <div class="button button2" onclick="showRomeInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteRomeList2()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="travel-preview" id="camdenList2">
+                        <img class="search-tile" src="img/camden1.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Sightseeing day sail in Camden</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 9.8</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">30&#8364; </span> per person
+                            <div class="button button2" onclick="showSailDayInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteCamdenList2()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="travel-preview" id="mexicoList2">
+                        <img class="search-tile" src="img/mexico1.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Half day canyon jump in Mexico</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 6.3</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">70&#8364; </span> per person
+                            <div class="button button2" onclick="showMexicoInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteMexicoList2()">Delete</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="list3" class="list">
+                    <!-- List 3 -->
+                    <div class="hotel-preview" id="conradList3">
+                        <img class="search-tile" src="img/conrad.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Hotel conrad</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 8.5</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">158&#8364; </span> per night
+                            <div class="button button2" onclick="showConradInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteConradList3()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="hotel-preview" id="waldorfList3">
+                        <img class="search-tile" src="img/waldorf.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Waldorf Astoria Hotel</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 9.5</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">215&#8364; </span> per night
+                            <div class="button button2" onclick="showWaldorfInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteWaldorfList3()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="hotel-preview" id="exeMoncloaList3">
+                        <img class="search-tile" src="img/exe-moncloa.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Hotel Exe Moncloa</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 8.2</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">149&#8364; </span> per night
+                            <div class="button button2" onclick="showExeMoncloaInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteExeMoncloaList3()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="hotel-preview" id="versallesList3">
+                        <img class="search-tile" src="img/versalles.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Hotel Versalles</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 8.4</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">89&#8364; </span> per night
+                            <div class="button button2" onclick="showVersallesInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteVersallesList3()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="travel-preview" id="mantaList3">
+                        <img class="search-tile" src="img/manta1.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Night dive with manta rays in Hawaii</div>
+                            <!-- We have called it 'hotel-title' instead of 'travel-title' as the style is the same -->
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <!-- Same for 'hotel-rating' and 'hotel-opinions' -->
+                            <div class="hotel-opinions">User-reviews: 9.5</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">40&#8364; </span> per person
+                            <div class="button button2" onclick="showNightDiveInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteMantaList3()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="travel-preview" id="romeList3">
+                        <img class="search-tile" src="img/rome1.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Ancient Rome experience</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 7.2</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">65&#8364; </span> per person
+                            <div class="button button2" onclick="showRomeInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteRomeList3()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="travel-preview" id="camdenList3">
+                        <img class="search-tile" src="img/camden1.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Sightseeing day sail in Camden</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 9.8</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">30&#8364; </span> per person
+                            <div class="button button2" onclick="showSailDayInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteCamdenList3()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="travel-preview" id="mexicoList3">
+                        <img class="search-tile" src="img/mexico1.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Half day canyon jump in Mexico</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 6.3</div>
+                        </div>
+                        <div class="last-col">
+                            <span class="price">70&#8364; </span> per person
+                            <div class="button button2" onclick="showMexicoInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteMexicoList3()">Delete</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div id="favourite-list">
+                <p class="titleTasks"> Favourite list</p>
+                <div class="results">
+                    <div class="hotel-preview" id="conradFavourite">
+                        <img class="search-tile" src="img/conrad.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Hotel conrad</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">New York, United States</div>
+                        </div>
+                        <div class="last-col">
+                            <div class="button button2" onclick="showConradInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteConradFavourite()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="hotel-preview" id="waldorfFavourite">
+                        <img class="search-tile" src="img/waldorf.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Waldorf Astoria Hotel</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">Amsterdam, Netherlands</div>
+                        </div>
+                        <div class="last-col">
+
+                            <button type="button" class="deleteHotel" onclick="deleteWaldorfFavourite()">Delete</button>
+                            <div class="button button2" onclick="showWaldorfInfo()"> More information</div>
+                        </div>
+                    </div>
+                    <div class="hotel-preview" id="exeMoncloaFavourite">
+                        <img class="search-tile" src="img/exe-moncloa.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Hotel Exe Moncloa</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">Madrid, Spain</div>
+                        </div>
+                        <div class="last-col">
+                            <div class="button button2" onclick="showExeMoncloaInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteExeMoncloaFavourite()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="hotel-preview" id="versallesFavourite">
+                        <img class="search-tile" src="img/versalles.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Hotel Versalles</div>
+                            <div class="hotel-rating">Madrid, Spain</div>
+                        </div>
+                        <div class="last-col">
+                            <div class="button button2" onclick="showVersallesInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteVersallesFavourite()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="travel-preview" id="mantaFavourite">
+                        <img class="search-tile" src="img/manta1.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Night dive with manta rays in Hawaii</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 9.5</div>
+                        </div>
+                        <div class="last-col">
+                            <div class="button button2" onclick="showNightDiveInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteMantaFavourite()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="travel-preview" id="romeFavourite">
+                        <img class="search-tile" src="img/rome1.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Ancient Rome experience</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 7.2</div>
+                        </div>
+                        <div class="last-col">
+                            <div class="button button2" onclick="showRomeInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteRomeFavourite()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="travel-preview" id="camdenFavourite">
+                        <img class="search-tile" src="img/camden1.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Sightseeing day sail in Camden</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 9.8</div>
+                        </div>
+                        <div class="last-col">
+                            <div class="button button2" onclick="showSailDayInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteCamdenFavourite()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="travel-preview" id="mexicoFavourite">
+                        <img class="search-tile" src="img/mexico1.jpg">
+                        <div class="first-col">
+                            <div class="hotel-title">Half day canyon jump in Mexico</div>
+                            <div class="hotel-rating">Rating: &#9733;&#9733;&#9733;</div>
+                            <div class="hotel-opinions">User-reviews: 6.3</div>
+                        </div>
+                        <div class="last-col">
+                            <div class="button button2" onclick="showMexicoInfo()"> More information</div>
+                            <button type="button" class="deleteHotel" onclick="deleteMexicoFavourite()">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="conradHotelInformation">
+                <div class="hotelInfo">
+                    <p class="titleTasks"> Conrad Hotel</p> <button type="button" class="deleteHotel" onclick="addConradFavourite()">Add to favourites</button>
+
+                    <img class="hotelInfoPhoto" src="img/conrad.jpg"><img class="hotelInfoPhoto" src="img/conrad-pool.jpg"><br>
+                    <img class="hotelInfoPhoto" src="img/conrad-section2.jpg"><img class="hotelInfoPhoto" src="img/conrad-lobby.jpeg">
+                    <br><br>
+                    <p class="attHotel">Location:
+                        <h class="attHotelDesc"> New York, United States </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Description:
+                        <h class="attHotelDesc"> Conrad Hotels & Resorts is access to life as you want to live it. A place to experience service and style on your own terms. A place to connect with the world. A place to stay inspired. We offer our guests one-of-a-kind experiences
+                            with sophisticated, locally inspired surroundings. Service that's more than personal, it's intuitive. And connections to people and places around the corner, and half way around the world. </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Rating:
+                        <h class="attHotelDesc"> &#9733;&#9733;&#9733;&#9733;&#9733; </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Price:
+                        <h class="attHotelDesc"> 159&#8364; per night</h>
+                    </p>
+                    <br>
+                    <p class="attHotel">User's review:
+                        <h class="attHotelDesc"> 8.5</h>
+                    </p>
+                    <br>
+                    <div class="attHotel">
+                        <div class="breadcrumbs">
+                            <div class="breadcrumb" onclick="showCommentsConrad()">Comments</div>
+                            <div class="breadcrumb" onclick="showRatingsConrad()">Ratings</div>
+                        </div>
+                        <div class="comment-rating">
+                            <div id="commentsConrad">
+                                <div class="comment-rating-box">
+                                    <img class="search-title" src="img/untitled.png">
+                                    <div class="first-col">
+                                        <div class="cr-name">John Smith</div>
+                                    </div>
+                                    <div class="cr-date">15:50 - 24/5/2016</div>
+                                    <p class="hotel-comment"> The hotel was awesome, we have a great time. The rooms were in a perfect state and with very luxurious stuff, also the service room was efficient and the resturant and buffet were incredible in a hotel terms. Thw pool
+                                        was very big and with a bar to buy some drinks. Another thing, is that the excursions that the hotel organizes were very cheap and we have a gret time visiting places.
+                                    </p>
+                                </div>
+                                <div class="comment-rating-box">
+                                    <img class="search-title" src="img/untitled.png">
+                                    <div class="first-col">
+                                        <div class="cr-name">Rita Ora</div>
+                                    </div>
+                                    <div class="cr-date">17:38 - 11/11/2017</div>
+                                    <p class="hotel-comment"> The hotel is like a normal hotel, I mean that its not perfect but it is not bad too. Even thoguh the restaurant and the buffet was delicious, we haven't eaten such good food in a hotel before. But this is for me the
+                                        only thing that was remarkable of the hotel.
+                                    </p>
+                                </div>
+                                <div class="button addCommentRating">Add Comment</div>
+                            </div>
+                            <div id="ratingsConrad">
+                                <div class="comment-rating-box">
+                                    <img class="search-title" src="img/untitled.png">
+                                    <div class="first-col">
+                                        <div class="cr-name">John Smith
+                                            <p class="cr-rate">Rating: 9.2 &#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="cr-date">15:50 - 24/5/2016</div>
+                                </div>
+                                <div class="comment-rating-box">
+                                    <img class="search-title" src="img/untitled.png">
+                                    <div class="first-col">
+                                        <div class="cr-name">Rita Ora</div>
+                                        <div class="cr-rate">Rating: 7.1 &#9733;&#9733;&#9733;&#9733;</div>
+                                    </div>
+                                    <div class="cr-date">17:38 - 11/11/2017</div>
+                                </div>
+                                <div class="button addCommentRating">Add Rating</div>
+                            </div>
+                        </div>
+                        <button type="button" class="addToList" id="addToListConrad" onclick="ShowListsConrad()">Add to a list</button>
+                        <div id="conradLists">
+                            <button type="button" class="addToList" onclick="addConradList1()"> List 1</button>
+                            <button type="button" class="addToList" onclick="addConradList2()"> List 2</button>
+                            <button type="button" class="addToList" onclick="addConradList3()"> List 3</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="waldorfHotelInformation">
+                <div class="hotelInfo">
+                    <p class="titleTasks"> Waldorf Astoria Hotel</p> <button type="button" class="deleteHotel" onclick="addWaldorfFavourite()">Add to favourites</button>
+                    <img class="hotelInfoPhoto" src="img/waldorf.jpg"><img class="hotelInfoPhoto" src="img/waldorf-lobby.jpg">
+                    <img class="hotelInfoPhoto" src="img/waldorf-room.jpg"><img class="hotelInfoPhoto" src="img/waldorf-lobby2.jpg">
+                    <br><br>
+                    <p class="attHotel">Location:
+                        <h class="attHotelDesc"> Amsterdam, Netherlands </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Description:
+                        <h class="attHotelDesc"> An exceptional retreat in the heart of a storied and remarkable destination. Waldorf Astoria Amsterdam is a collection of six 17th century canal palaces on the Herengracht in Amsterdam. Discover Dutch heritage at its finest. Waldorf
+                            Astoria Amsterdam combines legendary service and timeless elegance for an unforgettable experience. A short walk from luxury shops, museums and theaters, this architectural masterpiece boasts breathtaking views of the canal
+                            or the courtyard garden from its guest rooms, suites and lofts. Delight your senses with world-class dining at the two-star Michelin restaurant, Librije's Zusje Amsterdam. </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Rating:
+                        <h class="attHotelDesc"> &#9733;&#9733;&#9733;&#9733;&#9733; </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Price:
+                        <h class="attHotelDesc"> 215&#8364; per night</h>
+                    </p>
+                    <br>
+                    <p class="attHotel">User's review:
+                        <h class="attHotelDesc"> 9.5</h>
+                    </p>
+                    <br>
+                    <div class="attHotel">
+                        <div class="breadcrumbs">
+                            <div class="breadcrumb" onclick="showCommentsWaldorf()">Comments</div>
+                            <div class="breadcrumb" onclick="showRatingsWaldorf()">Ratings</div>
+                        </div>
+                        <div class="comment-rating">
+                            <div id="commentsWaldorf">
+                                <div class="comment-rating-box">
+                                    <img class="search-title" src="img/untitled.png">
+                                    <div class="first-col">
+                                        <div class="cr-name">Julia Roberts</div>
+                                    </div>
+                                    <div class="cr-date">11:10 - 4/12/2016</div>
+                                    <p class="hotel-comment"> It was perfect, one of my faourites holidays in now my new favourite hotel, the Waldorf Astoria. Everything was good and perfect, the services were excellent and the hotel activties very goos and well organized to have
+                                        fun.
+                                    </p>
+                                </div>
+                                <div class="button addCommentRating">Add Comment</div>
+                            </div>
+                            <div id="ratingsWaldorf">
+                                <div class="comment-rating-box">
+                                    <img class="search-title" src="img/untitled.png">
+                                    <div class="first-col">
+                                        <div class="cr-name">Julia Roberts </div>
+                                        <div class="cr-rate">Rating: 9.6 &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                    </div>
+                                    <div class="cr-date">11:10 - 4/12/2016</div>
+                                </div>
+                                <div class="comment-rating-box">
+                                    <img class="search-title" src="img/untitled.png">
+                                    <div class="first-col">
+                                        <div class="cr-name">Will Junior</div>
+                                        <div class="cr-rate">Rating: 8.3 &#9733;&#9733;&#9733;&#9733;</div>
+                                    </div>
+                                    <div class="cr-date">21:25 - 10/3/2017</div>
+                                </div>
+                                <div class="button addCommentRating">Add Rating</div>
+                            </div>
+                        </div>
+                        <button type="button" class="addToList" id="addToListWaldorf" onclick="ShowListsWaldorf()">Add to a list</button>
+                        <div id="waldorfLists">
+                            <button type="button" class="addToList" onclick="addWaldorfList1()"> List 1</button>
+                            <button type="button" class="addToList" onclick="addWaldorfList2()"> List 2</button>
+                            <button type="button" class="addToList" onclick="addWaldorfList3()"> List 3</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="exeMoncloaHotelInformation">
+                <div class="hotelInfo">
+                    <p class="titleTasks">Hotel Exe Moncloa</p> <button type="button" class="deleteHotel" onclick="addExeMoncloaFavourite()">Add to favourites</button>
+                    <img class="hotelInfoPhoto" src="img/exe-moncloa.jpg"><img class="hotelInfoPhoto" src="img/exeMoncloa-pool.jpg">
+                    <img class="hotelInfoPhoto" src="img/exeMoncloa-bar.jpg"><img class="hotelInfoPhoto" src="img/exeMoncloa-room.jpg">
+                    <br><br>
+                    <p class="attHotel">Location:
+                        <h class="attHotelDesc">Madrid, Spain </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Description:
+                        <h class="attHotelDesc"> The Exe Moncloa stands on the neighborhood of Chamberí to invite you to enjoy an unbeatable location in the center of Madrid. Exe Moncloa presents an elegant decoration that combines perfectly with the avant-garde and minimalist
+                            lines of its design. Its facilities integrate a series of services that seek to provide a differentiating touch to the stays of our guests. Crowning the top floor of Exe Moncloa is one of the most privileged corners of Madrid.
+                            The terrace of Poniente, a space that is framed by the views of the Sierra de Guadarrama and the llanura Castellana. </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Rating:
+                        <h class="attHotelDesc"> &#9733;&#9733;&#9733;&#9733; </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Price:
+                        <h class="attHotelDesc"> 149&#8364; per night</h>
+                    </p>
+                    <br>
+                    <p class="attHotel">User's review:
+                        <h class="attHotelDesc"> 8.2</h>
+                    </p>
+                    <br>
+                    <div class="attHotel">
+                        <div class="breadcrumbs">
+                            <div class="breadcrumb" onclick="showCommentsExeMoncloa()">Comments</div>
+                            <div class="breadcrumb" onclick="showRatingsExeMoncloa()">Ratings</div>
+                        </div>
+                        <div class="comment-rating">
+                            <div id="commentsExeMoncloa">
+                                <div class="comment-rating-box">
+                                    <img class="search-title" src="img/untitled.png">
+                                    <div class="first-col">
+                                        <div class="cr-name">Luffy</div>
+                                    </div>
+                                    <div class="cr-date">11:10 - 4/12/2016</div>
+                                    <p class="hotel-comment"> Absolutely recommendable this hotel if going with sife and kids, we pass a reat time there and maybe thinking of repeating next year, hope this will help someone to choose the hotel for holidays.
+                                    </p>
+                                </div>
+                                <div class="button addCommentRating">Add Comment</div>
+                            </div>
+                            <div id="ratingsExeMoncloa">
+                                <div class="comment-rating-box">
+                                    <img class="search-title" src="img/untitled.png">
+                                    <div class="first-col">
+                                        <div class="cr-name">Luffy </div>
+                                        <div class="cr-rate">Rating: 8.0 &#9733;&#9733;&#9733;&#9733;</div>
+                                    </div>
+                                    <div class="cr-date">11:10 - 4/12/2016</div>
+                                </div>
+                                <div class="button addCommentRating">Add Rating</div>
+                            </div>
+                        </div>
+                        <button type="button" class="addToList" id="addToListExeMoncloa" onclick="ShowListsExeMoncloa()">Add to a list</button>
+                        <div id="exeMoncloaLists">
+                            <button type="button" class="addToList" onclick="addExeMoncloaList1()"> List 1</button>
+                            <button type="button" class="addToList" onclick="addExeMoncloaList2()"> List 2</button>
+                            <button type="button" class="addToList" onclick="addExeMoncloaList3()"> List 3</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="versallesHotelInformation">
+                <div class="hotelInfo">
+                    <p class="titleTasks"> Hotel Versalles</p> <button type="button" class="deleteHotel" onclick="addVersallesFavourite()">Add to favourites</button>
+                    <img class="hotelInfoPhoto" src="img/versalles.jpg"><img class="hotelInfoPhoto" src="img/versalles-lounge.jpg">
+                    <img class="hotelInfoPhoto" src="img/versalles-habitacion.jpg"><img class="hotelInfoPhoto" src="img/versalles-lobby.jpg">
+                    <br><br>
+                    <p class="attHotel">Location:
+                        <h class="attHotelDesc"> Madrid, Spain </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Description:
+                        <h class="attHotelDesc"> This elegant hotel is a 3-minute walk from the Alonso Martínez metro station. The simple rooms are decorated in neutral colors and feature soundproof windows, free Wi-Fi, flat-screen TVs, minibars and desks. Room service available.
+                            The hotel has a colorful cafe / bar that serves coffees and tapas, as well as a business center. Parking and a continental or buffet breakfast are available for a fee. </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Rating:
+                        <h class="attHotelDesc"> &#9733;&#9733;&#9733;&#9733; </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Price:
+                        <h class="attHotelDesc"> 89&#8364; per night</h>
+                    </p>
+                    <br>
+                    <p class="attHotel">User's review:
+                        <h class="attHotelDesc"> 8.4</h>
+                    </p>
+                    <br>
+                    <div class="attHotel">
+                        <div class="breadcrumbs">
+                            <div class="breadcrumb" onclick="showCommentsVersalles()">Comments</div>
+                            <div class="breadcrumb" onclick="showRatingsVersalles()">Ratings</div>
+                        </div>
+                        <div class="comment-rating">
+                            <div id="commentsVersalles">
+                                <div class="comment-rating-box">
+                                    <img class="search-title" src="img/untitled.png">
+                                    <div class="first-col">
+                                        <div class="cr-name">Daniel Rodriguez</div>
+                                    </div>
+                                    <div class="cr-date">14:00 - 23/8/2017</div>
+                                    <p class="hotel-comment"> I went with my friends, and is a good hotel, nothing especial, even though the attendace at the reception was excellent and respectful.
+                                    </p>
+                                </div>
+                                <div class="button addCommentRating">Add Comment</div>
+                            </div>
+                            <div id="ratingsVersalles">
+                                <div class="button addCommentRating">Add Rating</div>
+                            </div>
+                        </div>
+                        <button type="button" class="addToList" id="addToListVersalles" onclick="ShowListsVersalles()">Add to a list</button>
+                        <div id="versallesLists">
+                            <button type="button" class="addToList" onclick="addVersallesList1()"> List 1</button>
+                            <button type="button" class="addToList" onclick="addVersallesList2()"> List 2</button>
+                            <button type="button" class="addToList" onclick="addVersallesList3()"> List 3</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="travelMantaInformation">
+                <div class="travelInfo">
+                    <p class="titleTasks"> Night dive with manta rays in Hawaii</p><button type="button" class="deleteHotel" onclick="addMantaFavourite()">Add to favourites</button>
+                    <img class="hotelInfoPhoto" src="img/manta1.jpg"><img class="hotelInfoPhoto" src="img/manta2.jpg"><br>
+                    <img class="hotelInfoPhoto" src="img/manta3.jpg"><img class="hotelInfoPhoto" src="img/manta4.jpg">
+
+                    <br><br>
+                    <p class="attHotel">Location:
+                        <h class="attHotelDesc"> Kailua-Kona, United States </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Description:
+                        <h class="attHotelDesc"> The calm, clear waters off Kona are perfect for diving, and this is one of the best locations in Hawaii to encounter manta rays, ethereal creatures that glide elegantly through the water searching for plankton. Wingspans of up
+                            to 20 feet (6m) have been recorded, and as the team set up lights on the ocean floor, you’ll enjoy incredible views of the rays as they come remarkably close to your facemask before turning away at the last moment.</h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Rating:
+                        <h class="attHotelDesc"> &#9733;&#9733;&#9733;&#9733;&#9733; </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Price:
+                        <h class="attHotelDesc"> 40&#8364; per person</h>
+                    </p>
+                    <br>
+                    <p class="attHotel">User's review:
+                        <h class="attHotelDesc"> 9.5</h>
+                    </p>
+                    <button type="button" class="addToList" id="addToListManta" onclick="ShowListsManta()">Add to a list</button>
+                    <div id="mantaLists">
+                        <button type="button" class="addToList" onclick="addMantaList1()"> List 1</button>
+                        <button type="button" class="addToList" onclick="addMantaList2()"> List 2</button>
+                        <button type="button" class="addToList" onclick="addMantaList3()"> List 3</button>
+                    </div>
+                </div>
+            </div>
+            <div id="travelRomeInformation">
+                <div class="travelInfo">
+                    <p class="titleTasks"> Ancient Rome experience</p><button type="button" class="deleteHotel" onclick="addRomeFavourite()">Add to favourites</button>
+                    <img class="hotelInfoPhoto" src="img/rome1.jpg"><img class="hotelInfoPhoto" src="img/rome2.jpeg"><br>
+                    <img class="hotelInfoPhoto" src="img/rome3.jpg"><img class="hotelInfoPhoto" src="img/rome4.jpg">
+                    <br><br>
+                    <p class="attHotel">Location:
+                        <h class="attHotelDesc"> Rome, Italy </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Description:
+                        <h class="attHotelDesc"> Beginning atop Colle Oppio (Opium Hill) for stunning panoramic views of the Italian capital, you’ll proceed to the Colosseum, where your guide will help you skip to the front of the queue and find your headsets. You’ll hear the
+                            horrific but true stories of gladiator combat, executions and epic mock sea-battles that took place in this gigantic amphitheatre for the bloodthirsty entertainment of Roman citizens.
+                        </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Rating:
+                        <h class="attHotelDesc"> &#9733;&#9733;&#9733;&#9733; </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Price:
+                        <h class="attHotelDesc"> 65&#8364; per night</h>
+                    </p>
+                    <br>
+                    <p class="attHotel">User's review:
+                        <h class="attHotelDesc"> 7.2</h>
+                    </p>
+                    <button type="button" class="addToList" id="addToListRome" onclick="ShowListsRome()">Add to a list</button>
+                    <div id="romeLists">
+                        <button type="button" class="addToList" onclick="addRomeList1()"> List 1</button>
+                        <button type="button" class="addToList" onclick="addRomeList2()"> List 2</button>
+                        <button type="button" class="addToList" onclick="addRomeList3()"> List 3</button>
+                    </div>
+                </div>
+            </div>
+            <div id="travelSailDayInformation">
+                <div class="travelInfo">
+                    <p class="titleTasks"> Sightseeing day sail in Camden</p><button type="button" class="deleteHotel" onclick="addCamdenFavourite()">Add to favourites</button>
+                    <img class="hotelInfoPhoto" src="img/camden1.jpg"><img class="hotelInfoPhoto" src="img/camden2.jpg"><br>
+                    <img class="hotelInfoPhoto" src="img/camden3.jpg"><img class="hotelInfoPhoto" src="img/camden4.jpg">
+                    <br><br>
+                    <p class="attHotel">Location:
+                        <h class="attHotelDesc"> Camden, United States </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Description:
+                        <h class="attHotelDesc"> The iconic Maine coast is as beautiful a place for a sailing trip as you can imagine. With the wind ruffling your hair, board the Surprise, a traditional fishing schooner first launched in 1918. This gorgeous vessel has a proud
+                            maritime heritage, restored several times over nearly a century, and listed on the National Register of Historic Places, so a voyage on the Surprise through Penobscot Bay is one of sheer elegance.
+                        </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Rating:
+                        <h class="attHotelDesc"> &#9733;&#9733;&#9733;&#9733;&#9733; </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Price:
+                        <h class="attHotelDesc"> 30&#8364; per person</h>
+                    </p>
+                    <br>
+                    <p class="attHotel">User's review:
+                        <h class="attHotelDesc"> 9.8</h>
+                    </p>
+                    <button type="button" class="addToList" id="addToListCamden" onclick="ShowListsCamden()">Add to a list</button>
+                    <div id="camdenLists">
+                        <button type="button" class="addToList" onclick="addCamdenList1()"> List 1</button>
+                        <button type="button" class="addToList" onclick="addCamdenList2()"> List 2</button>
+                        <button type="button" class="addToList" onclick="addCamdenList3()"> List 3</button>
+                    </div>
+                </div>
+            </div>
+            <div id="travelMexicoInformation">
+                <div class="travelInfo">
+                    <p class="titleTasks"> Half day canyon jump in Mexico</p><button type="button" class="deleteHotel" onclick="addMexicoFavourite()">Add to favourites</button>
+                    <img class="hotelInfoPhoto" src="img/mexico1.jpg"><img class="hotelInfoPhoto" src="img/mexico2.jpg"><br>
+                    <img class="hotelInfoPhoto" src="img/mexico3.jpg"><img class="hotelInfoPhoto" src="img/mexico4.jpg">
+                    <br><br>
+                    <p class="attHotel">Location:
+                        <h class="attHotelDesc"> Cabo San Lucas, Mexico</h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Description:
+                        <h class="attHotelDesc"> As you wait your turn for this thrilling jump, you can enjoy spectacular views of the El Tule Canyon near Cabo just by looking down between your feet. The glass bottom of the suspended gondola lets you see the vibrant oasis on
+                            the canyon floor, and the arid outback territory all around. Around 100m (328ft) from the ground, you’ll be strapped into your safety harness by the professional team before shuffling to the edge, spreading arms wide, and smiling
+                            for the camera before over you go!</h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Rating:
+                        <h class="attHotelDesc"> &#9733;&#9733;&#9733; </h>
+                    </p>
+                    <br>
+                    <p class="attHotel">Price:
+                        <h class="attHotelDesc"> 70&#8364; per person</h>
+                    </p>
+                    <br>
+                    <p class="attHotel">User's review:
+                        <h class="attHotelDesc"> 6.3</h>
+                    </p>
+                    <button type="button" class="addToList" id="addToListMexico" onclick="ShowListsMexico()">Add to a list</button>
+                    <div id="mexicoLists">
+                        <button type="button" class="addToList" onclick="addMexicoList1()"> List 1</button>
+                        <button type="button" class="addToList" onclick="addMexicoList2()"> List 2</button>
+                        <button type="button" class="addToList" onclick="addMexicoList3()"> List 3</button>
+                    </div>
+                </div>
             </div>
         </div>
 
     </div>
     <div class="footer">
         <div class="footer-item"><label>About us</label></div>
-        <div class="footer-item"><label>Contact</label></div>
-        <div class="footer-item"><label>Legal</label></div>
+        <div class="footer-item" onclick="window.location.href= 'img/ContactFrom_v4/index.html'"><label>Contact</label></div>
+        <div class="footer-item" onclick="window.location.href= 'img/privacy-policy-template.pdf'"><label>Legal</label></a>
+        </div>
         <div class="footer-item"><label>FAQs</label></div>
     </div>
 
